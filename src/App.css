@@ -135,6 +135,13 @@
 .heat-3 { background-color: #3b82f6; } /* 61-99% */
 .heat-4 { background-color: #1d4ed8; } /* 100% */
 
+[data-theme="dark"] .heat-0 { background-color: #1e293b; }
+[data-theme="dark"] .heat-1 { background-color: #0f172a; }
+[data-theme="dark"] .heat-2 { background-color: #1e3a8a; }
+[data-theme="dark"] .heat-3 { background-color: #1d4ed8; }
+[data-theme="dark"] .heat-4 { background-color: #3b82f6; }
+
+
 /* Grid/Spreadsheet Layout */
 .spreadsheet-container {
   width: 100%;
@@ -181,6 +188,13 @@
 .week-color-4 { background-color: #d1fae5 !important; color: #059669 !important; } /* Green */
 .week-color-5 { background-color: #f3e8ff !important; color: #7e22ce !important; } /* Purple */
 .week-color-6 { background-color: #ffedd5 !important; color: #ea580c !important; } /* Orange */
+
+[data-theme="dark"] .week-color-1 { background-color: #4a044e !important; color: #fbcfe8 !important; } 
+[data-theme="dark"] .week-color-2 { background-color: #082f49 !important; color: #bae6fd !important; } 
+[data-theme="dark"] .week-color-3 { background-color: #451a03 !important; color: #fde68a !important; } 
+[data-theme="dark"] .week-color-4 { background-color: #064e3b !important; color: #a7f3d0 !important; } 
+[data-theme="dark"] .week-color-5 { background-color: #3b0764 !important; color: #e9d5ff !important; } 
+[data-theme="dark"] .week-color-6 { background-color: #7c2d12 !important; color: #fed7aa !important; } 
 
 /* Body Cells */
 .spreadsheet-table td {
@@ -231,6 +245,19 @@
   filter: brightness(0.95);
 }
 
+.inactive-cell {
+  background: var(--surface-color);
+  opacity: 0.6;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    var(--surface-border) 5px,
+    var(--surface-border) 10px
+  );
+  border: 1px solid var(--surface-border);
+}
+
 /* Boolean Checkbox */
 .custom-checkbox {
   width: 100%;
@@ -266,6 +293,10 @@
   cursor: text;
 }
 
+[data-theme="dark"] .measurable-input:focus {
+  background: rgba(0,0,0,0.7);
+}
+
 /* Add Habit Row */
 .add-habit-row td {
   padding: 1rem;
@@ -285,6 +316,8 @@
   border-radius: var(--border-radius-sm);
   font-family: inherit;
   font-size: 0.9rem;
+  background: var(--surface-color);
+  color: var(--text-primary);
 }
 
 .habit-select {
@@ -294,6 +327,7 @@
   border-radius: var(--border-radius-sm);
   font-family: inherit;
   background: var(--surface-color);
+  color: var(--text-primary);
 }
 
 .habit-target-input {
@@ -302,18 +336,20 @@
   border: 1px solid var(--surface-border);
   border-radius: var(--border-radius-sm);
   font-family: inherit;
+  background: var(--surface-color);
+  color: var(--text-primary);
 }
 
 .btn-primary {
   background: var(--text-primary);
-  color: white;
+  color: var(--bg-color);
   padding: 0.5rem 1.5rem;
   border-radius: var(--border-radius-sm);
   font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: #000;
+  opacity: 0.8;
 }
 
 .btn-delete {
